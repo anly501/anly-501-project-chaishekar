@@ -1,8 +1,8 @@
 
 body {
-    font-family:verdana;
+    font-family:'Times New Roman';
     background-image: ;
-    background-color: ;
+    background-color: white;
 
 }
 
@@ -11,7 +11,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #004d99;
+    background-color: black;
     max-width:1357px;
 }
 
@@ -59,15 +59,34 @@ li.dropdown {
 td {
     padding: 5px;
     text-align: left;
-    width: 500px;
+    width: auto;
 }
 
 tr{
     padding: 0px;
     text-align: top;
-    background-color:#ffffff
+    background-color: white;
 }
 
 img:hover {
   opacity: .6;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
