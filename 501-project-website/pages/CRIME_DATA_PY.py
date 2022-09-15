@@ -1,43 +1,36 @@
-import numpy as np
-import tweepy
-import tweepy as tw
 import pandas as pd
-# your Twitter API key and API secret
-api_key = "LBNeNod2Bd3Y0AdGBJT8Ka4Aa"
-api_secret = "MNlkJwxEeqS0MXkpi2wNidrAbiUpf4ueVkBJcvZsBBtvne1A7F"
-# authenticate
-auth = tw.OAuthHandler(api_key, api_secret)
-api = tw.API(auth, wait_on_rate_limit=True)
-search_query = "#crime -filter:retweets"
-# get tweets from the API
-tweets = tw.Cursor(api.search_tweets,
-              q=search_query,
-              lang="en").items(100)
-# store the API responses in a list
-tweets_copy = []
-for tweet in tweets:
-    tweets_copy.append(tweet)
-    
-print("Total Tweets fetched:", len(tweets_copy))
-# intialize the dataframe
-tweets_df = pd.DataFrame()
-# populate the dataframe
-for tweet in tweets_copy:
-    hashtags = []
-    try:
-        for hashtag in tweet.entities["hashtags"]:
-            hashtags.append(hashtag["text"])
-        text = api.get_status(id=tweet.id, tweet_mode='extended').full_text
-    except:
-        pass
-    tweets_df = tweets_df.append(pd.DataFrame({'user_name': tweet.user.name, 
-                                               'user_location': tweet.user.location,\
-                                               'user_description': tweet.user.description,
-                                               'user_verified': tweet.user.verified,
-                                               'date': tweet.created_at,
-                                               'text': text, 
-                                               'hashtags': [hashtags if hashtags else None],
-                                               'source': tweet.source}))
-    tweets_df = tweets_df.reset_index(drop=True)
-# show the dataframe
-tweets_df.head()
+import os
+import time
+import requests
+import json
+import csv
+from tqdm import tqdm
+import tweepy
+import requests
+import pandas as pd
+import os
+consumer_key        = 'LBNeNod2Bd3Y0AdGBJT8Ka4Aa'
+consumer_secret     = 'MNlkJwxEeqS0MXkpi2wNidrAbiUpf4ueVkBJcvZsBBtvne1A7F'
+access_token        = '1568064617036881922-LI9dm4r6ISllYfbKE4m9Vz2OW0MZI5'
+access_token_secret = 'MCq785e0hNBUkkkSwmQFHglVs6hMMKFh1pylkpCCVwyGa'
+bearer_token        = 'AAAAAAAAAAAAAAAAAAAAAIKDgwEAAAAAQNemNVFuPsQSzPbcM%2FvvMYx6EyI%3DtKOnXddTRlvH45AkNclsSwlEn8iBC4sEBoUDaAjqJU0mZKDNzm'
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+headers = {"Authorization": "Bearer {}".format(bearer_token)}
+print()
+def search_twitter (query, tweet_fields, max_results, bearer_token = bearer_token) :
+    headers = {"Authorization": "Bearer {}".format (bearer_token)}
+    url = "https://api.twitter.com/2/tweets/search/recent"
+    params = {"query": query, "tweet.fields": tweet_fields, "max_results": max_results}
+    response = requests. request ("GET", url, headers=headers, params = params)
+    if response.status_code != 200:
+        raise Exception (response.status_code, response.text)
+    return response. json()
+query = "crime location usa"
+max_results = 100
+tweet_fields="text,author_id,created_at,lang"
+# twitter api call
+data= search_twitter(query, tweet_fields, max_results, bearer_token = bearer_token)
+print(json.dumps(data, indent=4, sort_keys=True))
+
