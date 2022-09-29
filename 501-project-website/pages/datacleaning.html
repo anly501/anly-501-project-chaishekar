@@ -171,9 +171,7 @@
   }
   </style>
   <body>
-    
-  
-      <!--  HEADER BAR --> 
+    <!-- HEADER BAR -->
 <ul>
     
     
@@ -200,7 +198,7 @@
   <li><a href="../pages/exploringdata.html">Exploring Data</a></li>
 
   <!-- tab without dropdown  -->
-  <li><a href="../pages/naivebayes.html">Naïve Bayes</a></li>
+  <li><a href="../pages/naivebayes.html">Naive Bayes</a></li>
 
   <!-- tab without dropdown  -->
   <li><a href="../pages/decisiontrees.html">Decision Trees</a></li>
@@ -218,87 +216,82 @@
   <li><a href="../pages/conclusion.html">Conclusion</a></li>
   
   </ul>
-  
-  <h1 style =color:white ><b>Data Gathering</b></h1>
+
+  <h1 style =color:white ><b>Data Cleaning</b></h1>
  
   <table class = "center" style="width:65%">
     <tbody>
       <tr>
-        <th>Snippet of Dataset</th>
+        <th>Snippet of Clean Dataset</th>
         <th>Description</th>
       </tr>
       <tr>
-        <td><img alt="Twitter Data" height="250px" src="crime_data_r.png" width="450px" />
-        <center><a href="crime_data_r.png" target="new">View </a></center>
-        <a href="crime_data_r.png" target="new"> </a>
-  
-        <center><a href="R_CRIME_API.csv">Download csv file</a></center>
-        </td>
-        <td><h3> <center><b>R API</b></center></h3>
-        <br>
-          <center> Tweets containing the hashtag "crime" are retrieved through the usage of the Twitter API. The purpose of this is to have a better understanding of people's perspectives on crime.</center>
-           <br>
-           
-        <center><a href="R_CRIME_API.R">R code </a></center>
-        </td>
-      </tr>
-      <tr>
-        <td><img alt="Python_API" height="250px" src="CRIME_DATA_PY.png" width="450px" />
-        <center><a href="CRIME_DATA_PY.png" target="new">View</a></center>
-        <a href="CRIME_DATA_PY.png" target="new"> </a>
-  
-        <center><a href="CRIME_DATA_PY.csv"> download csv file </a></center>
-        </td> 
-        <td><h3> <center><b>Python API</b></center></h3>
-        <center> Through the utilization of the Twitter API, tweets that have the hashtag "crime" in conjunction with a location are retrieved.</center>
-        <br>
-        <center><a href="CRIME_DATA_PY.py">Python code </a></center>
-        </td>
-      </tr>
-      <tr>
-        <td><img alt="RAW DATA" height="250px" src="CRIME_RAW_DATA.png" width="450px" />
-        <center><a href="CRIME_RAW_DATA.png" target="new">View </a></center>
-        <a href="CRIME_RAW_DATA.png" target="new"> </a>
-  
-        </td>
-        <td><h3><center><b>Raw Data</b></center></h3> 
-        <p>UCR Age trend  : <a href="ucrAgeGender_trend.csv">Download csv file </a></p>
-        <p>Crime Against Property: <a href="Crimes_Against_Property_Offenses_Offense_Category_by_State_2020.xls.xlsx">Download csv file </a></p>
-        <p>US Mass Shooting : <a href="USMassShootings.xlsx">Download xlsx file </a></p>
-        <p>The source of this raw data is collected from FBI crime data explorer.
-        </td>
-      </tr>
-      
-      
-    </tbody>
-  </table>
-  </body>
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  </HTML>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+        <tr>
+			<td><img alt="python_cleaning_image" height="250px" src="twitter_cleaned_data_py.jpg" width="450px" />
+			<center><a href="twitter_cleaned_data_py.jpg" target="new">View </a></center>
+			<a href="twitter_cleaned_data_py.jpg" target="new"> </a>
+
+			<center><a href="cleaned_twitter_data_py.csv">Download Clean CSV File</a></center>
+			<center><a href="R_CRIME_API.csv">Download Raw CSV File</a></center>
+			</td>
+			<td><h3> <center><b>Python Code - Text Data</b></center></h3>
+			<br>
+			  <center>Python is used to clean up Twitter text data. In order to conduct an analysis of #crime, all of the columns in the dataset were removed, and the one column that remained was the text column.  Tokenization from the NLTK library and Countvectorizer from the scikit-learn library are both used during this cleaning process.</center> 
+			  <br>
+			<center><a href="twitter_data_cleaning_code_py.py">Python Code </a></center>
+			</td>
+		</tr>
+		
+		<tr>
+			<td><img alt="R_cleaned_data_offense_pic" height="250px" src="cleaned_crime_offense_data.jpg" width="450px" />
+			<center><a href="cleaned_crime_offense_data.jpg" target="new">View </a></center>
+			<a href="cleaned_crime_offense_data.jpg" target="new"> </a>
+            <center><a href="cleaned_crime_against_person_statewise_data_r.csv">Download Clean Crime by Person US States CSV File</a></center>
+            <center><a href="cleaned_crime_against_person_locationwise_data_r.csv">Download Clean Crime by Person US Location CSV File</a></center>
+            <center><a href="cleaned_crime_against_society_statewise_data_r.csv">Download Clean Crime by Society US States CSV File</a></center>
+            <center><a href="cleaned_crime_against_society_locationwisewise_data_r.csv">Download Clean Crime by Society US Location CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - Offenses in US Record Data</b></center></h3>
+			<center>R is used to clean up data that has been labeled. Using R packages, unnecessary columns are removed and it is identified whether the dataset contains any NA values or duplicates. The information is used to find out where in the US crimes against people and crimes against society happen.</center> 
+			<br>
+			<center><a href="crime_against_people_society_data_cleaning_code_r.r">R Code </a></center>
+			</td>
+		</tr>
+
+    <tr>
+			<td><img alt="R_cleaned_data_pic" height="250px" src="ucr_age_cleaned_data_r.jpg" width="450px" />
+			<center><a href="ucr_age_cleaned_data_r.jpg" target="new">View </a></center>
+			<a href="ucr_age_cleaned_data_r.jpg" target="new"> </a>
+            <center><a href="age_clean_data_r.csv">Download Clean CSV File</a></center>
+			<center><a href="ucrAgeGender.csv">Download Raw CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - Crime Age Record Data</b></center></h3>
+			<center>R is used for cleaning up labeled record data. The data is cleaned using R packages to eliminate unwanted columns and to determine whether the dataset contains any NA values or duplicates. The data are used to figure out how crimes in the USA vary by age group.</center> 
+			<br>
+			<center><a href="crime_age_data_cleaning_r.r">R Code </a></center>
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+</div>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
