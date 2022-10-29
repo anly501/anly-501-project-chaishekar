@@ -1,0 +1,52 @@
+﻿Offense,Gender,Gender_count
+Assault Offenses,Male,"1,145,789"
+Homicide Offenses,Male,"12,797"
+Human Trafficking Offenses,Male,335
+Kidnapping/Abduction,Male,"8,557"
+Sex Offenses,Male,"21,803"
+Arson,Male,"10,819"
+Bribery,Male,347
+Burglary/Breaking & Entering,Male,"279,522"
+Counterfeiting/Forgery,Male,"28,217"
+Destruction/Damage/Vandalism,Male,"508,037"
+Embezzlement,Male,"3,391"
+Extortion/Blackmail,Male,"9,020"
+Fraud Offenses,Male,"310,312"
+Larceny/Theft Offenses,Male,"1,188,814"
+Motor Vehicle Theft,Male,"320,919"
+Robbery,Male,"86,466"
+Stolen Property Offenses,Male,"46,192"
+Assault Offenses,Female,"1,546,208"
+Homicide Offenses,Female,"3,662"
+Human Trafficking Offenses,Female,"1,659"
+Kidnapping/Abduction,Female,"28,212"
+Sex Offenses,Female,"154,726"
+Arson,Female,"9,365"
+Bribery,Female,211
+Burglary/Breaking & Entering,Female,"239,263"
+Counterfeiting/Forgery,Female,"26,558"
+Destruction/Damage/Vandalism,Female,"549,220"
+Embezzlement,Female,"3,071"
+Extortion/Blackmail,Female,"3,354"
+Fraud Offenses,Female,"378,690"
+Larceny/Theft Offenses,Female,"1,003,049"
+Motor Vehicle Theft,Female,"197,047"
+Robbery,Female,"49,124"
+Stolen Property Offenses,,"29,358"
+Assault Offenses,Unknown,"14,775"
+Homicide Offenses,Unknown,78
+Human Trafficking Offenses,Unknown,147
+Kidnapping/Abduction,Unknown,150
+Sex Offenses,Unknown,514
+Arson,Unknown,"1,204"
+Bribery,Unknown,13
+Burglary/Breaking & Entering,Unknown,"3,254"
+Counterfeiting/Forgery,Unknown,"1,393"
+Destruction/Damage/Vandalism,Unknown,"7,819"
+Embezzlement,Unknown,75
+Extortion/Blackmail,Unknown,39
+Fraud Offenses,Unknown,"7,630"
+Larceny/Theft Offenses,Unknown,"15,985"
+Motor Vehicle Theft,Unknown,"2,693"
+Robbery,Unknown,428
+Stolen Property Offenses,Unknown,"7,534"
