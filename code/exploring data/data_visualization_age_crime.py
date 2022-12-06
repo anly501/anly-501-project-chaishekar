@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 ##import clean data
-clean_age_data = pd.read_csv('./age_clean_data_r.csv')
+clean_age_data = pd.read_csv('../../data/modified-data/cleaned_age_crime_data.csv')
 
 ##add a column for total number of crimes by age group
 clean_age_data.loc[:,'Offense Total'] = clean_age_data.sum(numeric_only=True, axis=1)
@@ -24,8 +24,6 @@ sns.lineplot(x="Age group", y="Offense Count", data=clean_age_data_melt)
 plt.title('Total Number of Crimes by Age Group')
 plt.xlabel('Age Group')
 plt.ylabel('Total Number of Crimes')
-
-
 plt.show()
 
 

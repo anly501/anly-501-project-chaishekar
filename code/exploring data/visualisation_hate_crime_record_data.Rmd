@@ -1,0 +1,60 @@
+---
+title: "visulisation hate crime"
+author: "Chaitanya Shekar"
+output:
+  html_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+library(lessR)
+library(tidyverse)
+```
+READ THE DATA
+```{r}
+hate_crime = read.csv("../../data/modified-data/cleaned_hate_crime_record_data.csv")
+head(hate_crime)
+```
+
+DATA VISUALISATION
+- pie chart for offender race
+```{r}
+offense_race_count = hate_crime %>%
+  count(OFFENDER_RACE)
+offense_race_count=offense_race_count[-1,]
+hsize = 3
+offense_race_count <- offense_race_count %>% 
+  mutate(x = hsize)
+
+ggplot(offense_race_count, aes(x = hsize, y = n, fill = OFFENDER_RACE)) +
+  geom_col(color = "black") +
+  coord_polar(theta = "y") +
+  ggtitle("Distribution of Offender Race 1991-2020")+
+  scale_fill_brewer(palette = "GnBu") +
+  xlim(c(0.2, hsize + 0.5)) +
+  theme(panel.background = element_rect(fill = "white"),
+        panel.grid = element_blank(),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank())
+```
+
+-BAR GRAPH FOR MONTHWISE INCIDENTS
+
+CODE:
+
+hate_crime(INCIDENT_DATE) = as.Date(hate_crime(INCIDENT_DATE), "%m/%d/%Y")
+
+month_incidents = hate_crime %>%
+
+  group_by(month(INCIDENT_DATE)) %>%
+  
+  summarize(n=n())
+  
+month = c("Jan", "Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec")
+
+month_incidents = cbind(month_incidents,month);month_incidents
+
+barplot(height=month_incidents$n, names=month_incidents$month, col=rgb(0.8,0.1,0.1,0.6),xlab="Month", ylab="Number of Incidents", main="Crime incidents monthwise from 1991-2020", cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+
