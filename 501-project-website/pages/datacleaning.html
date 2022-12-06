@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+   <!-- point to css stylesheet -->
+   <link rel="stylesheet" href="../styles.css">
+
+   
+  
+  <body style="background-color: black;">
+  
+  <style>
+  
+  body {
+    font-family: 'Times New Roman';
+      background-color : white ;
+      position : relative
+      style: #232435;
+  
+  }
+  
+  
+  .navbar{
+      top:0;
+      position: fixed;
+      width : 100%;
+      
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .topnav a.active {
+    background-color: black;
+    color: black;
+  }
+  
+  .headerLogo{
+    top:200px;
+    height:250px;
+    width:200px;
+    line-height:200px;
+  
+    overflow:hidden;
+   
+    <!-- top:200px; height:900px; width:1450px; line-height:500px -->
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  h1 {text-align: left;}
+  p {text-align: left;}
+  div {text-align: left;}
+  
+  
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+      max-width:1500px;
+  }
+  
+  li {
+      float: left;
+  }
+  
+  li a, .dropbtn {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+      background-color: grey;
+  }
+  
+  li.dropdown {
+      display: inline-block;
+  }
+  
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      
+      
+  }
+  
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      
+  }
+  
+  
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+  }
+  td {
+      padding: 5px;
+      text-align: left;
+      width: 500px;
+  }
+  
+  tr{
+     padding: 0px;
+     text-align: top;
+     background-color:#ffffff
+  }
+  
+  img:hover {
+    opacity: 1;
+  }
+  
+  </style>
+  
+  
+  
+  
+  
+  <div class="w3-container w3-border city" id="Data Gathering" >
+  <br>
+  <br>
+  
+ 
+  
+  <style>
+  
+  th, td {
+    border: 1px solid black;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+  <body>
+    <!-- HEADER BAR -->
+<ul>
+    
+    
+  <!-- link back to homepage -->
+  <li><a href="../index.html">About Me</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar">Code</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar">Data</a></li>  
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/introduction.html">Introduction</a></li>
+
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datagathering.html">Data Gathering</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datacleaning.html">Data Cleaning</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/exploringdata.html">Exploring Data</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Naive Bayes</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/naivebayes_R.html" >NaiveBayes in R</a>
+    <a href="../pages/naivebayes_Python.html" >NaiveBayes in Python</a>
+    
+    </div>
+</li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/DT_RECORD_DATA.html">Decision Trees</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/SVM_text_data.html">SVM</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/clustering.html">Clustering</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/armandnetworking.html">ARM and Networking</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/conclusion.html">Conclusion</a></li>
+  
+  </ul>
+
+  <h1 style =color:white ><b>Data Cleaning</b></h1>
+ 
+  <table class = "center" style="width:65%">
+    <tbody>
+      <tr>
+        <th>Snippet of Clean Dataset</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <tr>
+			<td><img alt="python_cleaning_image" height="250px" src="twitter_cleaned_data_py.jpg" width="450px" />
+			<center><a href="twitter_cleaned_data_py.jpg" target="new">View </a></center>
+			<a href="twitter_cleaned_data_py.jpg" target="new"> </a>
+
+			<center><a href="cleaned_twitter_data_py.csv">Download Clean CSV File</a></center>
+			<center><a href="R_CRIME_API.csv">Download Raw CSV File</a></center>
+			</td>
+			<td><h3> <center><b>Python Code - Text Data</b></center></h3>
+			<br>
+			  <center>Python is used to clean up Twitter text data. In order to conduct an analysis of #crime, all of the columns in the dataset were removed, and the one column that remained was the text column.  Tokenization from the NLTK library and Countvectorizer from the scikit-learn library are both used during this cleaning process.</center> 
+			  <br>
+			<center><a href="twitter_data_cleaning_code_py.py">Python Code </a></center>
+			</td>
+		</tr>
+		
+		<tr>
+			<td><img alt="R_cleaned_data_offense_pic" height="250px" src="cleaned_crime_offense_data.jpg" width="450px" />
+			<center><a href="cleaned_crime_offense_data.jpg" target="new">View </a></center>
+			<a href="cleaned_crime_offense_data.jpg" target="new"> </a>
+            <center><a href="cleaned_crime_against_person_statewise_data_r.csv">Download Clean Crime by Person US States CSV File</a></center>
+            <center><a href="cleaned_crime_against_person_locationwise_data_r.csv">Download Clean Crime by Person US Location CSV File</a></center>
+            <center><a href="cleaned_crime_against_society_statewise_data_r.csv">Download Clean Crime by Society US States CSV File</a></center>
+            <center><a href="cleaned_crime_against_society_locationwisewise_data_r.csv">Download Clean Crime by Society US Location CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - Offenses in US Record Data</b></center></h3>
+			<center>R is used to clean up data that has been labeled. Using R packages, unnecessary columns are removed and it is identified whether the dataset contains any NA values or duplicates. The information is used to find out where in the US crimes against people and crimes against society happen.</center> 
+			<br>
+			<center><a href="crime_against_people_society_data_cleaning_code_r.r">R Code </a></center>
+			</td>
+		</tr>
+
+    <tr>
+			<td><img alt="R_cleaned_data_pic" height="250px" src="ucr_age_cleaned_data_r.jpg" width="450px" />
+			<center><a href="ucr_age_cleaned_data_r.jpg" target="new">View </a></center>
+			<a href="ucr_age_cleaned_data_r.jpg" target="new"> </a>
+            <center><a href="age_clean_data_r.csv">Download Clean CSV File</a></center>
+			<center><a href="ucrAgeGender.csv">Download Raw CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - Crime Age Record Data</b></center></h3>
+			<center>R is used for cleaning up labeled record data. The data is cleaned using R packages to eliminate unwanted columns and to determine whether the dataset contains any NA values or duplicates. The data are used to figure out how crimes in the USA vary by age group.</center> 
+			<br>
+			<center><a href="crime_age_data_cleaning_r.r">R Code </a></center>
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+</div>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
