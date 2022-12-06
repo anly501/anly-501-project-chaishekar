@@ -1,0 +1,82 @@
+---
+title: "state crime data"
+author: "Chaitanya Shekar"
+
+---
+
+IMPORT PACKAGES
+```{r}
+library(tidyverse)
+library(stats)
+```
+
+READ THE DATA
+```{r}
+state_crime_data = read.csv('../../data/raw-data/state_crime.csv')
+#head of the data
+head(state_crime_data)
+```
+
+TYPE OF DATA 
+```{r}
+str(state_crime_data)
+```
+
+COLUMN NAMES
+```{r}
+ColNames = colnames(state_crime_data); ColNames
+```
+
+RENAME THE COLUMN NAMES
+```{r}
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Population")] = "Population"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Property.All" )] = "Property_Crime_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Property.Burglary" )] = "Property_Burglary_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Property.Motor" )] = "Property_Motor_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Property.Larceny" )] = "Property_Larceny_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Violent.All" )] = "Violent_Crime_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Violent.Assault" )] = "Violent_Assault_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Violent.Murder" )] = "Violent_Murder_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Violent.Rape" )] = "Violent_Rape_Rate"
+colnames(state_crime_data)[which(names(state_crime_data) == "Data.Rates.Violent.Robbery" )] = "Violent_Robbery_Rate"
+
+```
+
+NUMBER OF ROWS AND COLUMN BEFORE CLEANING THE DATA 
+```{r}
+NumColumns = ncol(state_crime_data); NumColumns
+NumRows = nrow(state_crime_data); NumRows
+```
+
+REMOVE UNWANTED COLUMNS
+```{r}
+drop = c("Data.Totals.Property.All", "Data.Totals.Property.Burglary", "Data.Totals.Property.Larceny", "Data.Totals.Property.Motor","Data.Totals.Violent.All", "Data.Totals.Violent.Assault","Data.Totals.Violent.Murder","Data.Totals.Violent.Rape","Data.Totals.Violent.Robbery")
+state_crime_data = state_crime_data[,!(names(state_crime_data) %in% drop)]
+
+```
+
+CHECK IF THERE ARE NA VALUES
+```{r}
+anyNA(state_crime_data)
+```
+
+FIND IF ANY DUPLICATES ARE IN THE DATA 
+```{r}
+sum_of_duplicates=sum(duplicated(state_crime_data));sum_of_duplicates
+```
+
+NUMBER OF ROWS ANDCOLUMN AFTER CLEANING THE DATA 
+```{r}
+NumColumns = ncol(state_crime_data); NumColumns
+NumRows = nrow(state_crime_data); NumRows
+```
+
+SUMMARY OF THE CLEANED DATA
+```{r}
+lapply(state_crime_data,summary) 
+```
+
+EXPORT THE CLEANED DATA 
+```{r}
+write_csv(state_crime_data,"../../data/modified-data/cleaned_state_crime_record_data.csv")
+```

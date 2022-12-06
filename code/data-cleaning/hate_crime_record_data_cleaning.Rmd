@@ -1,0 +1,67 @@
+---
+title: "hate crime data"
+author: "Chaitanya Shekar"
+---
+
+IMPORT PACKAGES
+```{r}
+library(tidyverse)
+library(stats)
+```
+
+READ THE DATA
+```{r}
+hate_crime_data = read.csv('../../data/raw-data/hate_crime.csv')
+#head of the data
+head(hate_crime_data)
+```
+
+TYPE OF DATA 
+```{r}
+str(hate_crime_data)
+```
+
+COLUMN NAMES
+```{r}
+ColNames = colnames(hate_crime_data); ColNames
+```
+
+NUMBER OF ROWS AND COLUMN BEFORE CLEANING THE DATA 
+```{r}
+NumColumns = ncol(hate_crime_data); NumColumns
+NumRows = nrow(hate_crime_data); NumRows
+```
+
+FIND IF ANY DUPLICATES ARE IN THE DATA 
+```{r}
+sum_of_duplicates=sum(duplicated(hate_crime_data)); sum_of_duplicates
+```
+
+REMOVE UNWANTED COLUMNS AND EMPTY COLUMNS
+```{r}
+drop = c("INCIDENT_ID", "ORI", "PUB_AGENCY_NAME","PUB_AGENCY_UNIT","AGENCY_TYPE_NAME","ADULT_VICTIM_COUNT","JUVENILE_VICTIM_COUNT","ADULT_OFFENDER_COUNT","JUVENILE_OFFENDER_COUNT","OFFENDER_ETHNICITY","TOTAL_INDIVIDUAL_VICTIMS")
+hate_crime_data = hate_crime_data[,!(names(hate_crime_data) %in% drop)]
+
+```
+
+CHECK IF THERE ARE NA VALUES
+```{r}
+anyNA(hate_crime_data)
+```
+
+
+NUMBER OF ROWS AND COLUMN AFTER CLEANING THE DATA 
+```{r}
+NumColumns = ncol(hate_crime_data); NumColumns
+NumRows = nrow(hate_crime_data); NumRows
+```
+
+SUMMARY OF THE CLEANED DATA
+```{r}
+lapply(hate_crime_data,summary)
+```
+
+EXPORT THE CLEANED DATA 
+```{r}
+write_csv(hate_crime_data,"../../data/modified-data/cleaned_hate_crime_record_data.csv")
+```

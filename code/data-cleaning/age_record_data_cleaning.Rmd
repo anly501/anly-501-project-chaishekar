@@ -1,0 +1,69 @@
+---
+title: "age_cleaned_data"
+author: "Chaitanya Shekar"
+---
+
+IMPORT PACKAGES
+```{r}
+library(tidyverse)
+library(stats)
+```
+
+READ THE DATA
+```{r}
+age_crime_data = read.csv('../../data/raw-data/age_crime_data.csv')
+#head of the data
+head(age_crime_data)
+```
+
+TYPE OF DATA 
+```{r}
+str(age_crime_data)
+```
+
+COLUMN NAMES
+```{r}
+ColNames = colnames(age_crime_data); ColNames
+```
+
+NUMBER OF ROWS AND COLUMN BEFORE CLEANING THE DATA 
+```{r}
+NumColumns = ncol(age_crime_data); NumColumns
+NumRows = nrow(age_crime_data); NumRows
+```
+
+REMOVE UNWANTED COLUMNS AND ROWS
+```{r}
+
+drop = c("All ages", "0 to 17", "18 & older", "10 to 17")
+age_crime_data = age_crime_data[,!(names(age_crime_data) %in% drop)]; age_crime_data
+
+#remove all offenses
+age_crime_data = age_crime_data[-c(1),]
+```
+
+REMOVE NA VALUE ROW
+```{r}
+age_crime_data = age_crime_data[complete.cases(age_crime_data),]; age_crime_data
+```
+
+FIND IF ANY DUPLICATES ARE IN THE DATA 
+```{r}
+sum_of_duplicates=sum(duplicated(age_crime_data)); sum_of_duplicates
+```
+
+NUMBER OF ROWS AND COLUMN AFTER CLEANING THE DATA 
+```{r}
+NumColumns = ncol(age_crime_data); NumColumns
+NumRows = nrow(age_crime_data); NumRows
+```
+
+SUMMARY OF THE CLEANED DATA
+```{r}
+lapply(age_crime_data,summary)
+```
+
+EXPORT THE CLEANED DATA 
+```{r}
+write_csv(age_crime_data,"../../data/modified-data/cleaned_age_crime_record_data.csv")
+```
