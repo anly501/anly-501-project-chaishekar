@@ -1,0 +1,110 @@
+---
+title: "NAIVE BAYES FOR HATE CRIME RECORD DATA"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r warning=FALSE}
+# Libraries
+library(e1071)
+library(caTools)
+library(caret)
+library(dplyr)
+library(Hmisc)
+library(tidyverse)
+library(ggplot2)
+library(caret)
+library(matrixStats)
+library(caretEnsemble)
+library(psych)
+library(Amelia)
+library(mice)
+library(GGally)
+library(ROSE)
+library(rpart)
+library(randomForest)
+library(naivebayes)
+library(tidymodels)
+library(caTools)
+```
+
+```{r warning=FALSE}
+#read the race data
+hate_data = read_csv("../../data/modified-data/cleaned_hate_crime_record_data.csv")
+```
+```{r warning=FALSE}
+colnames(hate_data)
+```
+
+```{r warning=FALSE}
+#extract month and date
+hate_data$INCIDENT_DATE = as.Date(hate_data$INCIDENT_DATE,"%m/%d/%Y")
+hate_data$month = format(as.Date(hate_data$INCIDENT_DATE, format="%m/%d/%Y"),"%m")
+hate_data$date = format(as.Date(hate_data$INCIDENT_DATE, format="%m/%d/%Y"),"%d")
+```
+
+```{r warning=FALSE}
+#remove columns 
+drop = c("POPULATION_GROUP_DESC", "BIAS_DESC","INCIDENT_DATE","MULTIPLE_BIAS")
+hate_data = hate_data[,!(names(hate_data) %in% drop)]
+```
+
+```{r warning=FALSE}
+#label endcoding
+hate_data$STATE_ABBR = as.numeric(factor(hate_data$STATE_ABBR))
+hate_data$STATE_NAME = as.numeric(factor(hate_data$STATE_NAME))
+hate_data$DIVISION_NAME = as.numeric(factor(hate_data$DIVISION_NAME))
+hate_data$REGION_NAME = as.numeric(factor(hate_data$REGION_NAME))
+hate_data$POPULATION_GROUP_CODE = as.numeric(factor(hate_data$POPULATION_GROUP_CODE))
+hate_data$OFFENSE_NAME = as.numeric(factor(hate_data$OFFENSE_NAME))
+hate_data$LOCATION_NAME = as.numeric(factor(hate_data$LOCATION_NAME))
+hate_data$VICTIM_TYPES = as.numeric(factor(hate_data$VICTIM_TYPES))
+hate_data$MULTIPLE_OFFENSE = as.numeric(factor(hate_data$MULTIPLE_OFFENSE))
+hate_data
+```
+```{r warning=FALSE}
+##check if there are Nan values
+
+hate_data = na.omit(hate_data)
+library(e1071)
+library(caTools)
+hate_data$OFFENDER_RACE = as.factor(hate_data$OFFENDER_RACE)
+```
+
+```{r}
+# Splitting test and train
+# Splitting test and train
+set.seed(1223)
+sample = sample(c(TRUE, FALSE), nrow(hate_data), replace=TRUE, prob=c(0.7,0.3))
+train  = hate_data[sample, ]
+test   = hate_data[!sample, ]
+
+```
+
+```{r warning=FALSE}
+model = naive_bayes(OFFENDER_RACE~., data=train)
+```
+
+```{r warning=FALSE, fig.width=10}
+train_pred=predict(model,train)
+plot(train_pred, main="Distribution of Predict Hate Crime Data", col ="#45739B")
+```
+
+```{r warning=FALSE}
+train_cm = table(train_pred,train$OFFENDER_RACE)
+confusionMatrix(train_cm)
+```
+```{r warning=FALSE, fig.height=5, fig.width=8}
+train_cm_df = data.frame(train_cm)
+colnames(train_cm_df) = c('pred', 'truth', 'y')
+
+ggplot(data = train_cm_df, mapping = aes(x = truth , y = pred)) +
+  geom_tile(aes(fill = y), colour = "white") +
+  labs(title = 'Confusion Matrix of Train Data') + 
+  geom_text(aes(label = sprintf("%1.0f", y)), vjust = 1, colour = 'white') +
+  theme_bw() + theme(legend.position = "none")
+```
+
