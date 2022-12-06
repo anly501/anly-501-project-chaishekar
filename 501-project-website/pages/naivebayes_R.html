@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+   <!-- point to css stylesheet -->
+   <link rel="stylesheet" href="../styles.css">
+
+   
+  
+  <body style="background-color: black;">
+  
+  <style>
+  
+  body {
+    font-family: 'Times New Roman';
+      background-color : white ;
+      position : relative
+      style: #232435;
+  
+  }
+  
+  
+  .navbar{
+      top:0;
+      position: fixed;
+      width : 100%;
+      
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .topnav a.active {
+    background-color: black;
+    color: black;
+  }
+  
+  .headerLogo{
+    top:200px;
+    height:250px;
+    width:200px;
+    line-height:200px;
+  
+    overflow:hidden;
+   
+    <!-- top:200px; height:900px; width:1450px; line-height:500px -->
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  h1 {text-align: left;}
+  p {text-align: left;}
+  div {text-align: left;}
+  
+  
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+      max-width:1500px;
+  }
+  
+  li {
+      float: left;
+  }
+  
+  li a, .dropbtn {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+      background-color: grey;
+  }
+  
+  li.dropdown {
+      display: inline-block;
+  }
+  
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      
+      
+  }
+  
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      
+  }
+  
+  
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+  }
+  td {
+      padding: 5px;
+      text-align: left;
+      width: 500px;
+  }
+  
+  tr{
+     padding: 0px;
+     text-align: top;
+     background-color:#ffffff
+  }
+  
+  img:hover {
+    opacity: 1;
+  }
+  
+  </style>
+  
+  
+  
+  
+  
+  <div class="w3-container w3-border city" id="Naive Bayes" >
+  <br>
+  <br>
+  
+ 
+  
+  <style>
+  
+  th, td {
+    border: 1px solid black;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+  <body>
+    
+    
+    <!-- code folding -->
+    
+    </head>
+    
+    <body>
+
+      <!--  HEADER BAR --> 
+<ul>
+    
+    
+  <!-- link back to homepage -->
+  <li><a href="../index.html">About Me</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/code">Code</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/data">Data</a></li>  
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/introduction.html">Introduction</a></li>
+
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datagathering.html">Data Gathering</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datacleaning.html">Data Cleaning</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/exploringdata.html">Exploring Data</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Naive Bayes</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/naivebayes_R.html" >Record Data</a>
+    <a href="../pages/naivebayes_Python.html" >Text Data</a>
+    
+    </div>
+  </li>
+
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/DT_RECORD_DATA.html">Decision Trees</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/svm_text_data.html">SVM</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Clustering</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/clustering_record_data.html" >Record Data</a>
+    <a href="../pages/clustering_text_data.html" >Text Data</a>
+    
+    </div>
+  </li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/arm_record_data.html">ARM and Networking</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/conclusion.html">Conclusion</a></li>
+  
+  </ul>
+
+  <title>NAIVE BAYES FOR RECORD DATA</title>
+  <div class="content" style="margin: 80px;" >
+    <div style="margin-left: 250px; margin-right: 250px;">
+    <h1 style= color:white>NAIVE BAYES FOR RECORD DATA</h1> 
+    <h2 style= color:white><b>INTRODUCTION</b></h2> 
+    <p style= color:white >Naive Bayes is a classification method based on Bayes' Theorem and the assumption of predictor independence. A Naive Bayes classifier posits, in simple terms, that the existence of one feature in a class is independent to the presence of other features.</p>
+    <p style= color:white> The Naive Bayes model is simple to construct and especially suitable for extremely big data sets. In addition to its simplicity, Naive Bayes is known to outperform even the most complex classification techniques.</p>
+    <h3 style= color:white><b>Assumption for Naive Bayes: </b></h3>
+    <p style= color:white> The Naive Bayes algorithm makes the assumption that the predictors are independent of each other. In real life, it is almost impossible that we get a set of predictors which are completely independent. </p>
+    <h3 style= color:white><b>Types of Naive Bayes Classifier:</b></h3>
+    <h4 style= color:white> &#9679 Multinomial Naive Bayes:</h4>
+    <p style= color:white> This is mostly used to determine how to place a document into a certain category, such as sports, politics, technology, etc. The frequency of the words in the document is one of the things that the classifier looks at.</p>
+    <h4 style= color:white>&#9679 Bernoulli Naive Bayes:</h4>
+    <p style= color:white> This is comparable to the multinomial naive bayes model, with the exception that the predictors are boolean variables. The parameters that we use to predict the class variable take on simply yes or no values, such as whether or not a word appears in the text.</p>
+    <h4 style= color:white>&#9679 Gaussian Naive Bayes:</h4>
+    <p style= color:white> When predictors have continuous values and are not discrete, these values are assumed to be drawn from a Gaussian distribution.</p>
+    <h3 style= color:white><b>Advantages of Naive Bayes</b></h3>
+    <p style= color:white>&#9679 This algorithm is efficient and can save a great deal of time.</p>
+    <p style= color:white>&#9679 The Naive Bayes method can be used to solve multiclass prediction issues.</p>
+    <p style= color:white>&#9679 If the model's assumption on the independence of characteristics remains true, it can outperform competing models and requires significantly less training data.</p>
+    <p style= color:white>&#9679 The Naive Bayes algorithm is more suitable for category input variables than numerical ones.</p>
+    <h3 style= color:white><b>Disadvantages of Naive Bayes</b></h3>
+    <p style= color:white>&#9679 Naive Bayes assumes that all predictors (or features) are independent, which rarely happens in real life. This makes it harder for this algorithm to be used in the real world.</p>
+    <p style= color:white>&#9679 The "zero-frequency problem" is when this algorithm gives a probability of 0 to a categorical variable whose category in the test data set wasn't in the training data set. The best way to solve this problem would be to use a smoothing method.</p>
+    <p style= color:white>&#9679 Its estimations can be wrong in some cases, so you shouldn’t take its probability outputs very seriously. </p>
+    <br>			
+    <h2 style= color:white><b>ABOUT THE DATA</b></h2>
+    <p style= color:white> The record data utilized by Naive Bayes pertains to the Homicide (murder and non-negligent manslaughter), rape, robbery, and serious assault constitute violent crime. Violent crimes involve the use or threat of physical force.</p>
+    <p style= color:white> The data on the Crime Data Explorer covers just crimes that have been reported; it is not a full record of all crimes. Before assessing the data, it is crucial to understand the many causes of criminal activity and crime reporting in a community. Without these factors, existing data can be misleading. There are many things to think about, like the size and density of the population, the economy, the unemployment rate, the prosecutorial, judicial, and correctional policies, the administrative and investigative focus of law enforcement, how people feel about crime and police, and how strong the police force really is.  </p>
+    <p style= color:white> The dataset contains three types of data about violent crime victims: their age, gender, and race, with different type of crime offenses.</p>
+    <p style= color:white> The state crime rate data contains crime rate for property and violent crime category. For the naive bayes, the violent crime rate is considered which is further categoried into differnt type of violent crime such as murder, rape, robbery and assault crime. The other set of dataset is the hate crime data from the year 1990-2020.</p>
+    <br>
+    <h2 style= color:white><b>DATA CLEANING AND VISUALISATION</b></h2>
+    <p style= color:white> Code for cleaning and Visulation of the data <a href="nb.r" target="_blank">here</a> </p>
+    <p style= color:white>R is utilized in the process of cleaning up data that has previously been labeled. By utilizing R packages, it is possible to eliminate columns that are not necessary and determine whether or not the dataset contains any NA values or duplicates.</p>
+    </div>
+      <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        table.center {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        </style>
+   
+    <table style="width:100%">
+      <tbody>
+        <tr>
+          <td width = "50%"><center><img alt="year_data" height="500px" src="../images/NB_YEAR_VICTIM_RECORD_DATA.png" /></center>
+          <br>
+          <center><a href="../images/NB_YEAR_VICTIM_RECORD_DATA.png" target="new">View </a></center>
+                <center><a href="../../data/raw-data/Victims_yearly_record_data.csv">Victim Yearly Crime Rate CSV file</a></center>
+          <a href="../images/NB_YEAR_VICTIM_RECORD_DATA.png" target="new"> </a>
+          </br
+          </td>
+    
+          <td width = "50%"><center><img alt="" height="500px" src="../images/NB_VICTIM_GRAPH_RECORD_DATA.png" width="550px" /></center>
+          <br>
+          <center><a href="v../images/NB_VICTIM_GRAPH_RECORD_DATA.png" target="new">View </a></center>
+                <center><a href="../../codes/exploring data/visulaisation_victim_recod_data.html">View Code and Visualization</a></center>
+          <a href="../images/NB_VICTIM_GRAPH_RECORD_DATA.png" target="new"> </a>
+          <center>There is variation in the violent crime rate, as shown in the graph the crime rate has been incresed since 2018.</center>
+          </br>  
+        </td>
+            
+          </tr>
+        <tr>
+          <td width = "50%"><center><img alt="age_data" height="500px" src="../images/NB_CLEANED_AGE_RECORD_DATA.png" width="550px" /></center>
+          <br>
+          <center><a href="../images/NB_CLEANED_AGE_RECORD_DATA.png" target="new">View </a></center>
+                <center><a href="../../data/modified-data/cleaned_agedata_dt.csv">Victim Age CSV file</a></center>
+          <a href="../images/NB_CLEANED_AGE_RECORD_DATA.png" target="new"> </a>
+         
+          </br
+          </td>
+    
+          <td width = "50%"><center><img alt="" height="500px" src="../images/NB_AGE_AGE_VICTIM_RECORD_DATA.png" width="550px" /></center>
+          <br>
+          <center><a href="../images/NB_AGE_AGE_VICTIM_RECORD_DATA.png" target="new">View </a></center>
+                <center><a href="../../codes/exploring data/visulaisation_victim_recod_data.html">View Code and Visualization</a></center>
+          <a href="../images/NB_AGE_AGE_VICTIM_RECORD_DATA.png" target="new"> </a>
+          <center>The age distribution of victim's is high between age 20-35 and the children are not mostly the victims when compared to adults.</center>
+         
+          </br>  
+        </td>
+            
+          </tr>
+          
+          <tr>
+            <td width = "50%"><center><img alt="gender_data" height="500px" src="../images/NB_CLEAN_GENDER_RECORD_DATA.png" width="550px" /></center>
+            <br>
+            <center><a href="../images/NB_CLEAN_GENDER_RECORD_DATA.png" target="new">View </a></center>
+                  <center><a href="../../data/modified-data/cleaned_genderdata_dt.csv">Victim Gender CSV file</a></center>
+            <a href="../images/NB_CLEAN_GENDER_RECORD_DATA.png" target="new"> </a>
+            </br
+            </td>
+      
+            <td width = "50%"><center><img alt="" height="500px" src="../images/NB_GRAPH_GENDER_VICTIM_RECORD_DATA.png" width="550px" /></center>
+            <br>
+            <center><a href="../images/NB_GRAPH_GENDER_VICTIM_RECORD_DATA.png" target="new">View </a></center>
+                  <center><a href="../../codes/exploring data/visulaisation_victim_recod_data.html">View Code and Visualization</a></center>
+            <a href="../images/NB_GRAPH_GENDER_VICTIM_RECORD_DATA.png" target="new"> </a>
+            <center>As shown in the piechart, females are mostly the victims when comapred to males.</center>
+            </br>  
+          </td>
+              
+            </tr>
+
+            <tr>
+              <td width = "50%"><center><img alt="race_data" height="500px" src="../images/NB_CLEANED_RACE_VICTIM_RECORD_DATA.png" width="550px" /></center>
+              <br>
+              <center><a href="../images/NB_CLEANED_RACE_VICTIM_RECORD_DATA.png" target="new">View </a></center>
+                    <center><a href="../../data/modified-data/cleaned_racedata_dt.csv">Victim Race CSV file</a></center>
+              <a href="../images/NB_CLEANED_RACE_VICTIM_RECORD_DATA.png" target="new"> </a>
+              </br
+              </td>
+        
+              <td width = "50%"><center><img alt="" height="500px" src="../images/NB_RACE_GRAPH_VICTIM_RECORD_DATA.png" width="550px" /></center>
+              <br>
+              <center><a href="../images/NB_RACE_GRAPH_VICTIM_RECORD_DATA.png" target="new">View </a></center>
+                    <center><a href="../../codes/exploring data/visulaisation_victim_recod_data.html">View Code and Visualization</a></center>
+              <a href="../images/NB_RACE_GRAPH_VICTIM_RECORD_DATA.png" target="new"> </a>
+              <center>White's are  mostly the victims when comapred to other race, followed by Black's or African American's.</center>
+            
+              </br>  
+            </td>
+                
+              </tr>
+
+              <tr>
+                <td width = "50%"><center><img alt="age_data" height="500px" src="../images/CLEANED_STATE_CRIME_RECORD_DATA.png" width="550px" /></center>
+                <br>
+                <center><a href="../images/CLEANED_STATE_CRIME_RECORD_DATA.png" target="new">View </a></center>
+                      <center><a href="../../data/modified-data/cleaned_state_crime_record_data.csv">State Crime Rate 1960-2019 CSV file</a></center>
+                <a href="../images/CLEANED_STATE_CRIME_RECORD_DATA.png" target="new"> </a>
+               
+                </br
+                </td>
+          
+                <td width = "50%"><center><img alt="" height="500px" src="../images/VISUALISATION_CRIMERATE_YEAR_STATE_RECORD_DATA.png" width="550px" /></center>
+                <br>
+                <center><a href="../images/VISUALISATION_CRIMERATE_YEAR_STATE_RECORD_DATA.png" target="new">View </a></center>
+                      <center><a href="../../codes/exploring data/visualization_state_crime_record_data.html">View Code and Visualization</a></center>
+                <a href="../images/VISUALISATION_CRIMERATE_YEAR_STATE_RECORD_DATA.png" target="new"> </a>
+                <center>The line graph demonstrates that the property crime rate is larger than the violent crime rate, but has been declining gradually since the late 1990s.</center>
+               
+                </br>  
+              </td>
+                  
+                </tr>
+              
+                <tr>
+                  <td width = "50%"><center><img alt="age_data" height="500px" src="../images/CLEANED_HATE_CRIME_RECORD_DATA.png" width="550px" /></center>
+                  <br>
+                  <center><a href="./images/CLEANED_HATE_CRIME_RECORD_DATA.png" target="new">View </a></center>
+                        <center><a href="../../data/modified-data/cleaned_hate_crime_record_data.csv">Hate Crime Rate 1991-2020 CSV file</a></center>
+                  <a href="./images/CLEANED_HATE_CRIME_RECORD_DATA.png" target="new"> </a>
+                 
+                  </br
+                  </td>
+            
+                  <td width = "50%"><center><img alt="" height="500px" src="../images/VISUALISATION_OFFENDER_RACE_HATE_CRIME_RECORD_DATA.png" width="550px" /></center>
+                  <br>
+                  <center><a href="../images/VISUALISATION_OFFENDER_RACE_HATE_CRIME_RECORD_DATA.png" target="new">View </a></center>
+                        <center><a href="../../codes/exploring data/visualisation_hate_crime_record_data.html">View Code and Visualization</a></center>
+                  <a href="../images/VISUALISATION_OFFENDER_RACE_HATE_CRIME_RECORD_DATA.png" target="new"> </a>
+                  <center>The donut pie chart shows that the rate of White's is higher than that of other races, although most of the races weren't known. This is followed by the rate of Black or African American people.</center>
+                 
+                  </br>  
+                </td>
+                    
+                  </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <div style="margin-left: 250px; margin-right: 250px;">
+    <h2 style= color:white><b>MODEL BUILDING</b></h2>
+    <p style= color:white>The dataset is divided into training and testing sets before the model is built. The split ratio in the training set is 0.75 and in the testing set it is 0.25. The training dataset is used to train the naive bayes model, which is then tested using labels from the testing dataset.</p>
+    </div>
+    <div style="margin-left: 450px; margin-right: 450px;">
+    <p style= color:white> Model Building Code for Victim Age Data <a href="../../codes/naive bayes/nb_victim_age_record_data.html" target="_blank">here</a> </p>
+    </div>
+    <table style="width:100%">
+      <tbody>
+        <tr>
+          <td width = "50%"><center><img alt="nb_age" height="500px" src="../images/NB_CONMAT_AGE_RECORD_DATA.png"  width="350px"/></center>
+          <br>
+          <center><a href="../images/NB_CONMAT_AGE_RECORD_DATA.png" target="new">View </a></center>
+            <a href="../images/NB_CONMAT_AGE_RECORD_DATA.png" target="new"> </a>
+          </br
+          </td>
+    
+          <td width = "50%"><center><img alt="nb_age_cm_value" height="500px" src="../images/NB_CONMAT_VALUE_AGE_RECORD_DATA.png" width="350px" /></center>
+          <br>
+          <center><a href="../images/NB_CONMAT_VALUE_AGE_RECORD_DATA.png" target="new">View </a></center>
+          <a href="../images/NB_CONMAT_VALUE_AGE_RECORD_DATA.png" target="new"> </a>
+        
+          </br>  
+        </td>
+            
+          <td width = "50%"><center><img alt="nb_predit_age" height="500px" src="../images/NB_PREDICT_AGE_RECORD_DATA.png" width="350px" /></center>
+            <br>
+            <center><a href="../images/NB_PREDICT_AGE_RECORD_DATA.png" target="new">View </a></center>
+            <a href="../images/NB_PREDICT_AGE_RECORD_DATA.png" target="new"> </a>
+           
+            </br>  
+          </td>
+          </tr>
+      </tbody>
+    </table>
+    <div style="margin-left: 450px; margin-right: 450px;">
+    <p style= color:white> Model Building Code for Victim Gender Data <a href="../../codes/naive bayes/nb_victim_gender_record_data.html" target="_blank">here</a> </p>
+  </div>
+    <table style="width:100%">
+      <tbody>
+        <tr>
+          <td width = "50%"><center><img alt="nb_gender_cm_value" height="500px" src="../images/NB_CONMAT_GENDER_RECORD_DATA.png" width="350px" /></center>
+          <br>
+          <center><a href="../images/NB_CONMAT_GENDER_RECORD_DATA.png" target="new">View </a></center>
+          <a href="../images/NB_CONMAT_GENDER_RECORD_DATA.png" target="new"> </a>
+          
+          </br>  
+        </td>
+        <td width = "50%"><center><img alt="nb_gender" height="500px" src="../images/NB_CONMAT_VALUE_GENDER_RECORD_DATA.png"  width="350px"/></center>
+          <br>
+          <center><a href="../images/NB_CONMAT_VALUE_GENDER_RECORD_DATA.png" target="new">View </a></center>
+            <a href="../images/NB_CONMAT_VALUE_GENDER_RECORD_DATA.png" target="new"> </a>
+          </br
+        </td>
+            
+          <td width = "50%"><center><img alt="nb_race_cm_value" height="500px" src="../images/NB_PREDICT_GENDER_RECORD_DATA.png" width="350px" /></center>
+            <br>
+            <center><a href="../images/NB_PREDICT_GENDER_RECORD_DATA.png" target="new">View </a></center>
+            <a href="../images/NB_PREDICT_GENDER_RECORD_DATA.png" target="new"> </a>
+             
+            </br>  
+          </td>
+          
+          </tr>
+
+        </tbody>
+      </table>
+      <div style="margin-left: 450px; margin-right: 450px;">
+    <p style= color:white> Model Building Code for Victim Race Data <a href="../../codes/naive bayes/nb_victim_race_record_data.html" target="_blank">here</a> </p>
+  </div>
+    <table style="width:100%">
+      <tbody>
+        <tr>
+        <td width = "50%"><center><img alt="nb_race" height="500px" src="../images/NB_CONMAT_RACE_RECORD_DATA.png"  width="300px"/></center>
+        <br>
+        <center><a href=".../images/NB_CONMAT_RACE_RECORD_DATA.png" target="new">View </a></center>
+          <a href="../images/NB_CONMAT_RACE_RECORD_DATA.png" target="new"> </a>
+        </br
+        </td>
+    
+        <td width = "50%"><center><img alt="nb_race_cm_value" height="500px" src="../images/NB_CONMAT_VALUE_RACE_RECORD_DATA.png" width="300px" /></center>
+        <br>
+        <center><a href="../images/NB_CONMAT_VALUE_RACE_RECORD_DATA.png" target="new">View </a></center>
+        <a href="../images/NB_CONMAT_VALUE_RACE_RECORD_DATA.png" target="new"> </a>
+         
+          </br>  
+        </td>
+            
+          <td width = "50%"><center><img alt="nb_predit_race" height="500px" src="../images/NB_PREDICT_RACE_RECORD_DATA.png" width="300px" /></center>
+            <br>
+            <center><a href="../images/NB_PREDICT_RACE_RECORD_DATA.png" target="new">View </a></center>
+            <a href="../images/NB_PREDICT_RACE_RECORD_DATA.png" target="new"> </a>
+            
+            </br>  
+          </td>
+
+          <td width = "50%"><center><img alt="nb_varimp_race" height="500px" src="../images/NB_VARIMP_RACE_RECORD_DATA.png" width="300px" /></center>
+            <br>
+            <center><a href="../images/NB_VARIMP_RACE_RECORD_DATA.png" target="new">View </a></center>
+            <a href="../images/NB_VARIMP_RACE_RECORD_DATA.png" target="new"> </a>
+            <center> The graph illustrating the model's key features.</center> 
+            </br>  
+          </td>
+          </tr>
+          </tbody>
+          </table>
+          <div style="margin-left: 450px; margin-right: 450px;">
+          <p style= color:white> Model Building Code for Violent Crime Data <a href="../../codes/naive bayes/nb_state_violent_crime_record_data.html" target="_blank">here</a> </p>
+          </div>
+          <table style="width:100%">
+            <tbody>
+              <tr>
+                <td width = "50%"><center><img alt="nb_gender_cm_value" height="500px" src="../images/NB_CONMAT_GRAPH_STATE_RECORD_DATA.png" width="350px" /></center>
+                <br>
+                <center><a href="../images/NB_CONMAT_GRAPH_STATE_RECORD_DATA.png" target="new">View </a></center>
+                <a href="../images/NB_CONMAT_GRAPH_STATE_RECORD_DATA.png" target="new"> </a>
+                
+                </br>  
+              </td>
+              <td width = "50%"><center><img alt="nb_gender" height="500px" src="../images/NB_CONFMAT_TABLE_STATE_RECORD_DATA.png"  width="350px"/></center>
+                <br>
+                <center><a href="../images/NB_CONFMAT_TABLE_STATE_RECORD_DATA.png" target="new">View </a></center>
+                  <a href="../images/NB_CONFMAT_TABLE_STATE_RECORD_DATA.png" target="new"> </a>
+                </br
+              </td>
+                  
+                <td width = "50%"><center><img alt="nb_race_cm_value" height="500px" src="../images/NB_PRED_STATE_RECORD_DATA.png" width="350px" /></center>
+                  <br>
+                  <center><a href="../images/NB_PRED_STATE_RECORD_DATA.png" target="new">View </a></center>
+                  <a href="../images/NB_PRED_STATE_RECORD_DATA.png" target="new"> </a>
+                   
+                  </br>  
+                </td>
+                
+                </tr>
+      
+              </tbody>
+            </table>
+            <div style="margin-left: 450px; margin-right: 450px;">
+            <p style= color:white> Model Building Code for Hate Crime Data <a href="../../codes/naive bayes/nb_hate_crime_record_data.html" target="_blank">here</a> </p>
+          </div>
+            <table style="width:100%">
+              <tbody>
+                <tr>
+                  <td width = "50%"><center><img alt="nb_gender_cm_value" height="500px" src="../images/NB_CONFMATR_TABLE_HATE_RECORD_DATA.png" width="350px" /></center>
+                  <br>
+                  <center><a href="../images/NB_CONFMATR_TABLE_HATE_RECORD_DATA.png" target="new">View </a></center>
+                  <a href="../images/NB_CONFMATR_TABLE_HATE_RECORD_DATA.png" target="new"> </a>
+                  
+                  </br>  
+                </td>
+                <td width = "50%"><center><img alt="nb_gender" height="500px" src="../images/NB_CONFMAT_HATE_RECORD_DATA.png"  width="350px"/></center>
+                  <br>
+                  <center><a href="../images/NB_CONFMAT_HATE_RECORD_DATA.png" target="new">View </a></center>
+                    <a href="../images/NB_CONFMAT_HATE_RECORD_DATA.png" target="new"> </a>
+                  </br
+                </td>
+                    
+                  <td width = "50%"><center><img alt="nb_race_cm_value" height="500px" src="../images/NB_PRED_HATE_RECORD_DATA.png" width="350px" /></center>
+                    <br>
+                    <center><a href="../images/NB_PRED_HATE_RECORD_DATA.png" target="new">View </a></center>
+                    <a href="../images/NB_PRED_HATE_RECORD_DATA.png" target="new"> </a>
+                     
+                    </br>  
+                  </td>
+                  
+                  </tr>
+        
+                </tbody>
+              </table>
+      </tbody>
+    </table>
+
+    <br>
+    <div style="margin-left: 250px; margin-right: 250px;">
+    <h2 style= color:white><b>CONCLUSION</b></h2>
+    <center><p style= color:white>Given the types of crimes committed, the goal was to carry out a naive Bayes analysis so as to improve the accuracy of victim age, victim race, victim gender, violent crime rate and hate crime predictions for each category. The accuracy of the model in predicting the age group and hate crime is 60%, which is above average accuracy for that age group. The accuracy of the model in predicting gender and race is 75%, which is relatively reasonable accuracy for that gender and race group whereas the accuracy of the model in predicting violent crime from 1960-2019 is 93% which is relatively high.</p></center>
+    </div>
+    </div>
+
+
+
+
+
+    
+   

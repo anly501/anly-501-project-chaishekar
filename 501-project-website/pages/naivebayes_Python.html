@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+   <!-- point to css stylesheet -->
+   <link rel="stylesheet" href="../styles.css">
+
+   
+  
+  <body style="background-color: black;">
+  
+  <style>
+  
+  body {
+    font-family: 'Times New Roman';
+      background-color : white ;
+      position : relative
+      style: #232435;
+  
+  }
+  
+  
+  .navbar{
+      top:0;
+      position: fixed;
+      width : 100%;
+      
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .topnav a.active {
+    background-color: black;
+    color: black;
+  }
+  
+  .headerLogo{
+    top:200px;
+    height:250px;
+    width:200px;
+    line-height:200px;
+  
+    overflow:hidden;
+   
+    <!-- top:200px; height:900px; width:1450px; line-height:500px -->
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  h1 {text-align: left;}
+  p {text-align: left;}
+  div {text-align: left;}
+  
+  
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+      max-width:1500px;
+  }
+  
+  li {
+      float: left;
+  }
+  
+  li a, .dropbtn {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+      background-color: grey;
+  }
+  
+  li.dropdown {
+      display: inline-block;
+  }
+  
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      
+      
+  }
+  
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      
+  }
+  
+  
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+  }
+  td {
+      padding: 5px;
+      text-align: left;
+      width: 500px;
+  }
+  
+  tr{
+     padding: 0px;
+     text-align: top;
+     background-color:#ffffff
+  }
+  
+  img:hover {
+    opacity: 1;
+  }
+  
+  </style>
+  
+  
+  
+  
+  
+  <div class="w3-container w3-border city" id="Naive Bayes" >
+  <br>
+  <br>
+  
+ 
+  
+  <style>
+  
+  th, td {
+    border: 1px solid black;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+  <body>
+    
+    
+    <!-- code folding -->
+    
+    </head>
+    
+    <body>
+
+      <!--  HEADER BAR --> 
+<ul>
+    
+    
+  <!-- link back to homepage -->
+  <li><a href="../index.html">About Me</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/code">Code</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/data">Data</a></li>  
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/introduction.html">Introduction</a></li>
+
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datagathering.html">Data Gathering</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datacleaning.html">Data Cleaning</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/exploringdata.html">Exploring Data</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Naive Bayes</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/naivebayes_R.html" >Record Data</a>
+    <a href="../pages/naivebayes_Python.html" >Text Data</a>
+    
+    </div>
+    </li>
+
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/DT_RECORD_DATA.html">Decision Trees</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/svm_text_data.html">SVM</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Clustering</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/clustering_record_data.html" >Record Data</a>
+    <a href="../pages/clustering_text_data.html" >Text Data</a>
+    
+    </div>
+  </li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/arm_record_data.html">ARM and Networking</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/conclusion.html">Conclusion</a></li>
+  
+  </ul>
+
+  <title>NAIVE BAYES FOR TEXT DATA</title>
+  <div class="content" style="margin: 80px;" >
+    <div style="margin-left: 250px; margin-right: 250px;">
+    <h1 style= color:white><b>NAIVE BAYES FOR TEXT DATA</b></h1> 
+    <h2 style= color:white><b>INTRODUCTION</b></h2> 
+    <p style= color:white >Naive Bayes is a classification method based on Bayes' Theorem and the assumption of predictor independence. A Naive Bayes classifier posits, in simple terms, that the existence of one feature in a class is independent to the presence of other features.</p>
+    <p style= color:white> The Naive Bayes model is simple to construct and especially suitable for extremely big data sets. In addition to its simplicity, Naive Bayes is known to outperform even the most complex classification techniques.</p>
+    <h3 style= color:white><b>Assumption for Naive Bayes: </b></h3>
+    <p style= color:white> The Naive Bayes algorithm makes the assumption that the predictors are independent of each other. In real life, it is almost impossible that we get a set of predictors which are completely independent. </p>
+    <h3 style= color:white><b>Types of Naive Bayes Classifier:</b></h3>
+    <h4 style= color:white> &#9679 Multinomial Naive Bayes:</h4>
+    <p style= color:white> This is mostly used to determine how to place a document into a certain category, such as sports, politics, technology, etc. The frequency of the words in the document is one of the things that the classifier looks at.</p>
+    <h4 style= color:white>&#9679 Bernoulli Naive Bayes:</h4>
+    <p style= color:white> This is comparable to the multinomial naive bayes model, with the exception that the predictors are boolean variables. The parameters that we use to predict the class variable take on simply yes or no values, such as whether or not a word appears in the text.</p>
+    <h4 style= color:white>&#9679 Gaussian Naive Bayes:</h4>
+    <p style= color:white> When predictors have continuous values and are not discrete, these values are assumed to be drawn from a Gaussian distribution.</p>
+    <h3 style= color:white><b>Advantages of Naive Bayes</b></h3>
+    <p style= color:white>&#9679 This algorithm is efficient and can save a great deal of time.</p>
+    <p style= color:white>&#9679 The Naive Bayes method can be used to solve multiclass prediction issues.</p>
+    <p style= color:white>&#9679 If the model's assumption on the independence of characteristics remains true, it can outperform competing models and requires significantly less training data.</p>
+    <p style= color:white>&#9679 The Naive Bayes algorithm is more suitable for category input variables than numerical ones.</p>
+    <h3 style= color:white><b>Disadvantages of Naive Bayes</b></h3>
+    <p style= color:white>&#9679 Naive Bayes assumes that all predictors (or features) are independent, which rarely happens in real life. This makes it harder for this algorithm to be used in the real world.</p>
+    <p style= color:white>&#9679 The "zero-frequency problem" is when this algorithm gives a probability of 0 to a categorical variable whose category in the test data set wasn't in the training data set. The best way to solve this problem would be to use a smoothing method.</p>
+    <p style= color:white>&#9679 Its estimations can be wrong in some cases, so you shouldn’t take its probability outputs very seriously. </p>
+    <br>			
+
+    <h2 style= color:white><b>ABOUT THE DATA</b></h2>
+    <p style= color:white> The label text data is gathered from the #FBI and #USACRIME Twitter APIs. The #USACRIME and #CRIMEUSA hashtags are used interchangeably for the collecting of data regarding the use of hostages on Twitter, as both have the same purpose.The purpose of gathering this text data was to determine the public's view of the FBI and crime-related tweets in the United States.</p>
+    <br>
+    <h2 style= color:white><b>DATA CLEANING AND VISUALISATION</b></h2>
+    <p style= color:white>Python is used to clean up textual data from Twitter. Only the text column remained in the dataset after all other columns were eliminated in order to analyze #crime. During this cleaning procedure, both Tokenization from the NLTK library and Countvectorizer from the scikit-learn library are utilized.</p>
+    <p style= color:white>To provide a concise summary of the data, a wordcloud of both hashtags has been created.</p>
+    </div>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        table.center {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        </style>
+   
+    <table style="width:100%">
+      <tbody>
+        <tr>
+          <td width = "50%"><center><img alt="fbi_data" height="500px" src="../images/CLEANED_FBI_TEXT_DATA.png"  width="550px" /></center>
+          <br>
+          <center><a href="../images/CLEANED_FBI_TEXT_DATA.png" target="new">View </a></center>
+                <center><a href="../../data/modified-data/cleaned_fbi_text_data.csv">FBI CSV file</a></center>
+          <a href="../images/CLEANED_FBI_TEXT_DATA.png" target="new"> </a>
+          </br
+          </td>
+          <td width = "50%"><center><img alt="fbi_data_wordcloud" height="500px" src="../images/VISUALISATION_FBI_WORDCLOUD_TEXT_DATA.png"  width="550px" /></center>
+            <br>
+            <center><a href="../images/VISUALISATION_FBI_WORDCLOUD_TEXT_DATA.png" target="new">View </a></center>
+            <center><a href="../../codes/exploring data/VISUALISATION_TWITTER_FBI_DATA.html" target="new">Data Cleaning and Visualization HTML File </a></center>
+            <a href="../images/VISUALISATION_FBI_WORDCLOUD_TEXT_DATA.png" target="new"> </a>
+            </br
+            </td>
+
+        </tr>
+    
+        <tr>
+            <td width = "50%"><center><img alt="usacrime" height="500px" src="../images/CLEANED_USACRIME_TEXT_DATA.png" width="550px" /></center>
+                <br>
+                <center><a href="../images/CLEANED_USACRIME_TEXT_DATA.png" target="new">View </a></center>
+                      <center><a href="../../data/modified-data/cleaned_usacrime_text_data.csv">USA Crime CSV file</a></center>
+                <a href="../images/CLEANED_USACRIME_TEXT_DATA.png" target="new"> </a>
+            </br>
+            </td>
+            <td width = "50%"><center><img alt="fbi_data_wordcloud" height="500px" src="../images/VISUALISATION_USACRIME_WORDCLOUD_TEXT_DATA.png" /></center>
+              <br>
+              <center><a href="../images/VISUALISATION_USACRIME_WORDCLOUD_TEXT_DATA.png" target="new">View </a></center>
+              <center><a href="../../codes/exploring data/VISUALISATION_TWITTER_CRIMEUSA_DATA.html" target="new">Data Cleaning and Visualization HTML File </a></center>
+              <a href="../images/VISUALISATION_USACRIME_WORDCLOUD_TEXT_DATA.png" target="new"> </a>
+            </br>
+              </td>
+  
+            </tr>
+
+        </tbody>
+        </table>
+        <div style="margin-left: 250px; margin-right: 250px;">
+        <h2 style= color:white><b>MODEL BUILDING</b></h2>
+        <p style= color:white>The code can be found here <a href="../../codes/naive bayes/naivebayes_text_data.html" target="_blank">here</a> </p>
+        <p style= color:white>Before constructing a model, the dataset is divided into training and testing sets. The split ratio is 0.75 of the total number of data in the training set and 0.25 of the total number of data in the testing set. There are three distinct naive Bayes models built. The Naive Bayes models vary depending to the hypertuning of various parameters. primarily alpha values</p>
+        <h3 style= color:white><b>Naive Bayes Model 1</b></h3>
+        <p style= color:white> The first model is built with the default parameters. The default parameters are alpha = 1.0 and fit_prior = True. The model is built with the training set and the accuracy of the model is calculated with the testing set. The accuracy of the model is 0.75. </p>
+        <p style= color:white>The snapshot of the accuracy/heatmap is attached below.</p>
+        <center><img alt=".jpg" height="400px" src="../images/NB_APLA1_TEXT_DATA.png" width="600px" /></center>
+        <h3 style= color:white><b>Naive Bayes Model 2</b></h3>
+        <p style= color:white>This is the second naive bayes model. In this model, the hyperparameter are alpha = 5. In this model, the accuracy is 95%. </p>
+        <p style= color:white>The snapshot of the accuracy/heatmap is attached below.</p>
+        <center><img alt=".jpg" height="400px" src="../images/NB_ALPHA2_TEXT_DATA.png" width="600px" /></center>
+        <h3 style= color:white><b>Naive Bayes Model 3</b></h3>
+        <p style= color:white>This is the third naive bayes model. In this model, the hyperparameter are alpha = 0. In this model, the accuracy is 94%.</p>
+        <p style= color:white>The snapshot of the accuracy/heatmap is attached below.</p>
+        <center><img alt=".jpg" height="400px" src="../images/NB_ALPHA3_TEXT_DATA.png" width="600px" /></center>
+
+        <h2 style= color:white><b>CONCLUSION</b></h2>
+        <p style= color:white>The Naive Bayes model classified tweets generated from Twitter into the hashtag class (FBI and USACRIME) of different tweets. The accuracy of the models are 96% and 95%. The accuracy is pretty high. With the collection of words, the model is able to predict or classify the tweets into particular classes.</p>
+        </div>
+
+            
+         
+
+

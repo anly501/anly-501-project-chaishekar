@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+   <!-- point to css stylesheet -->
+   <link rel="stylesheet" href="../styles.css">
+
+   
+  
+  <body style="background-color: black;">
+  
+  <style>
+  
+  body {
+    font-family: 'Times New Roman';
+      background-color : white ;
+      position : relative
+      style: #232435;
+  
+  }
+  
+  
+  .navbar{
+      top:0;
+      position: fixed;
+      width : 100%;
+      
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .topnav a.active {
+    background-color: black;
+    color: black;
+  }
+  
+  .headerLogo{
+    top:200px;
+    height:250px;
+    width:200px;
+    line-height:200px;
+  
+    overflow:hidden;
+   
+   
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  h1 {text-align: left;}
+  p {text-align: left;}
+  div {text-align: left;}
+  
+  
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+      max-width:1500px;
+  }
+  
+  li {
+      float: left;
+  }
+  
+  li a, .dropbtn {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+      background-color: grey;
+  }
+  
+  li.dropdown {
+      display: inline-block;
+  }
+  
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      
+      
+  }
+  
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      
+  }
+  
+  
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+  }
+  td {
+      padding: 5px;
+      text-align: left;
+      width: 500px;
+  }
+  
+  tr{
+     padding: 0px;
+     text-align: top;
+     background-color:#ffffff
+  }
+  
+  img:hover {
+    opacity: 1;
+  }
+  
+  </style>
+  
+  
+  
+  
+  
+  <div class="w3-container w3-border city" id="Data Gathering" >
+  <br>
+  <br>
+  
+ 
+  
+  <style>
+  
+  th, td {
+    border: 1px solid black;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+  <body>
+    <!-- HEADER BAR -->
+<ul>
+    
+    
+  <!-- link back to homepage -->
+  <li><a href="../index.html">About Me</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/code">Code</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/data">Data</a></li>  
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/introduction.html">Introduction</a></li>
+
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datagathering.html">Data Gathering</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datacleaning.html">Data Cleaning</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/exploringdata.html">Exploring Data</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Naive Bayes</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/naivebayes_R.html" >Record Data</a>
+    <a href="../pages/naivebayes_Python.html" >Text Data</a>
+    
+    </div>
+  </li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/DT_RECORD_DATA.html">Decision Trees</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/svm_text_data.html">SVM</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Clustering</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/clustering_record_data.html" >Record Data</a>
+    <a href="../pages/clustering_text_data.html" >Text Data</a>
+    
+    </div>
+  </li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/arm_record_data.html">ARM and Networking</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/conclusion.html">Conclusion</a></li>
+  
+  </ul>
+  <div style="margin-left: 250px; margin-right: 250px;">
+  <h1 style =color:white ><b>DATA GATHERING</b></h1>
+  <p style =color:white>Data gathering is the process of gathering and measuring information about variables of interest in a systematic way that allows one to answer stated research questions, test hypotheses, and evaluate results. All fields of study, such as the physical and social sciences, the humanities, business, etc., have to collect data as part of their research. Different fields use different methods, but the focus is always on making sure the data is accurate and honest.</p>
+  <h4 style =color:white>The significance of ensuring precise and appropriate data gathering:</h4>
+  <p style =color:white>Regardless of the subject of study or preferred method of defining data (quantitative, qualitative), correct data collecting is necessary for preserving the validity of research. Errors are less likely to occur when proper data gathering instruments (existing, updated, or newly designed) and clear instructions for their right usage are chosen.</p>
+  <h4 style =color:white>Consequences of incorrect data gathering include the following:</h4>
+  <p style =color:white>&#9679 incapacity to appropriately answer research questions</p>
+  <p style =color:white>&#9679 failure to reproduce and validate the study</p>
+  <p style =color:white>&#9679 erroneous findings that result in wasted expenditure</p>
+  <p style =color:white>&#9679 tricking other researchers into investigating futile pathways</p>
+  <p style =color:white>&#9679 compromising public policy decisions</p>
+  <h4 style =color:white>The two methods are:</h4>
+  <p style =color:white>&#9679 Primary data gathering</p>
+  <p style =color:white>This is original, first-hand data acquired by data researchers, as the name implies. This is the first phase in acquiring information, and it is completed before any more or related research is conducted. Primary data results are very accurate if the information is collected by the researcher. However, there is a drawback: first-hand research can be time-consuming and costly.</p>
+  <p style =color:white>&#9679 Secondary data gathering</p>
+  <p style =color:white>Secondary data is data that has been gathered by third parties and has already been statistically analyzed. This material is either information that the researcher entrusted to others or information that the researcher searched up. Simply put, it's secondhand knowledge. Secondary information, while easier and less expensive to access than primary information, poses problems about veracity and validity. The majority of secondary data is quantitative.</p>
+  
+  <h2 style =color:white>Types of Data:</h2>
+  <h3 style =color:white>TEXT DATA</h3>
+  <h4 style =color:white>Application Programming Interface (API)</h4>
+  <p style =color:white>One way in which programs can share information is through the use of an API, or application programming interface. You probably utilize an API every time you do anything on your phone, from sending a message to checking the score of a game. They both employ an application programming interface (API) to retrieve and send the data to your mobile device. An application programming interface (API) acts as an intermediary between a user and a service by receiving requests, translating them, and delivering responses. Developers essentially use APIs to gain access to resources on behalf of end users. Of course, an API only delivers the information that the application's developers have decided to make available. A valid API key is typically needed to authenticate a request made to an API. Instructions and prerequisites for using an API can be found in its accompanying documentation. Indeed, the utilization of several APIs is oftentimes entirely gratis. Following the existing API instructions, developers can typically construct a URL to get the data in a browser.</p>
+
+  <h4 style =color:white>TWITTER API</h4>
+  <p style =color:white>A well-documented API, the Twitter API grants developers advanced access to the social media platform. You can use it to learn from and engage with Tweets. Direct messages, users, and other Twitter resources can all be interacted with. Developers can access user searches, block lists, real-time tweets, and more using Twitter's application programming interface (API).</p>
+  <p style =color:white>Twitter has made a number of application programming interfaces (APIs) available to programmers. Researchers and businesses can use these APIs to mine Twitter for information. Smaller initiatives can also benefit from it, including data analysis, bot development, and even the creation of fully automated systems that can communicate with Twitter. The Twitter Application Programming Interface (API) will be used to retrieve recent public Tweets that are relevant to a given search query.</p>
+  <h3 style =color:white>RECORD DATA</h3>
+  <p style =color:white>The record data is gathered from the FBI's website, Crime Data Explorer. The FBI's Crime Data Explorer (CDE) wants to make criminal and noncriminal law enforcement data sharing more open, easier to access, and better known. </p>
+
+  <h4 style =color:white>About Record Data</h4>
+  <p style =color:white>There are several record data collected according to the requirements of analysis because crime is a broad topic with many subcategories. The reord data provides information on crime in the United States for various age groups, genders, and races. From 1960 to 2019, the state crime data provides information on crime types. The hate crime dataset provides information on offenders in the United States from 1990 to 2020.</p>
+  </div>
+
+
+  <table class = "center" style="width:65%">
+    <tbody>
+      <tr>
+        <th>Snippet of Dataset</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><img alt="Twitter Data" height="250px" src="../images/R_CRIME_API_TEXT_DATA_RAW.png" width="450px" />
+        <center><a href="../images/R_CRIME_API_TEXT_DATA_RAW.png" target="new">View </a></center>
+        <a href="../images/R_CRIME_API_TEXT_DATA_RAW.png" target="new"> </a>
+  
+        <center><a href="../../data/raw-data/R_CRIME_TEXT_DATA.csv">Download csv file</a></center>
+        </td>
+        <td><h3> <center><b>R API FOR #CRIME</b></center></h3>
+        <br>
+          <center> The API gives users broad access to public Twitter data that they have decided to share with the rest of the world. #CRIME used to gather data from Twitter in order to analyze people's perspectives on crime.</center>
+          <center>The data is extracted by querying Twitter for the hashtag and querying for the most recent tweets, which are then turned into dataframes based on author, time, text, and language.</center>
+           <br>
+           
+        <center><a href="../../codes/data-gathering/R_CRIME_TEXT_DATA_API.Rmd">R code </a></center>
+        </td>
+      </tr>
+      <tr>
+        <td><img alt="Twitter Data" height="250px" src="../images/R_FBI_API_TEXT_DATA_RAW.png" width="450px" />
+        <center><a href="../images/R_FBI_API_TEXT_DATA_RAW.png" target="new">View </a></center>
+        <a href="../images/R_FBI_API_TEXT_DATA_RAW.png" target="new"> </a>
+  
+        <center><a href="../../data/raw-data/R_FBI_TEXT_DATA.csv">Download csv file</a></center>
+        </td>
+        <td><h3> <center><b>R API FOR #FBI</b></center></h3>
+        <br>
+        <center> The API gives users broad access to public Twitter data that they have decided to share with the rest of the world. #FBI used to gather data from Twitter in order to analyze people's perspectives on FBI.</center>
+        <center>The data is extracted by querying Twitter for the hashtag and querying for the most recent tweets, which are then turned into dataframes based on author, time, text, and language.</center>
+          
+        <br>
+           
+        <center><a href="../../codes/data-gathering/R_FBI_TEXT_DATA_API.Rmd">R code </a></center>
+        </td>
+      </tr>
+      <tr>
+        <td><img alt="Twitter Data" height="250px" src="../images/R_CRIMEUSA_API_TEXT_DATA_RAW.png" width="450px" />
+        <center><a href="../images/R_CRIMEUSA_API_TEXT_DATA_RAW.png" target="new">View </a></center>
+        <a href="../images/R_CRIMEUSA_API_TEXT_DATA_RAW.png" target="new"> </a>
+  
+        <center><a href="../../data/raw-data/R_CRIMEUSA_TEXT_DATA.csv">Download csv file</a></center>
+        </td>
+        <td><h3> <center><b>R API FOR #CRIMEUSA</b></center></h3>
+        <br>
+        <center> The API gives users broad access to public Twitter data that they have decided to share with the rest of the world. #CRIMEUSA used to gather data from Twitter in order to analyze people's perspectives on crime in USA.</center>
+        <center>The data is extracted by querying Twitter for the hashtag and querying for the most recent tweets, which are then turned into dataframes based on author, time, text, and language.</center>
+          <br>
+           
+        <center><a href="../../codes/data-gathering/R_CRIMEUSA_API.r">R code </a></center>
+        </td>
+      </tr>
+      <tr>
+        <td><img alt="Python_API" height="250px" src="../images/CRIME_DATA_PY_TEXT_DATA_RAW.png" width="450px" />
+        <center><a href="../images/CRIME_DATA_PY_TEXT_DATA_RAW.png" target="new">View</a></center>
+        <a href="../images/CRIME_DATA_PY_TEXT_DATA_RAW.png" target="new"> </a>
+  
+        <center><a href="../../data/raw-data/CRIME_LOCATION_PY_TEXT_DATA.csv"> download csv file </a></center>
+        </td> 
+        <td><h3> <center><b>Python API</b></center></h3>
+        <center> Through the utilization of the Twitter API, tweets that have the hashtag "crime" in conjunction with a location are retrieved.</center>
+        <center>The data is extracted by querying Twitter for the hashtag and querying for the most recent tweets, which are then turned into dataframes based on author, time, text, and language.</center>
+        <br>
+        <center><a href="../../codes/data-gathering/CRIME_DATA_PY.py">Python code </a></center>
+        </td>
+      </tr>
+      <tr>
+        <td><img alt="RECORD DATA" height="250px" src="../images/STATEWISE_CRIME_RAW.png" width="450px" />
+        <center><a href="../images/STATEWISE_CRIME_RAW.png" target="new">View </a></center>
+        <a href="../images/STATEWISE_CRIME_RAW.png" target="new"> </a>
+  
+        </td>
+        <td><h3><center><b>Raw Data</b></center></h3> 
+        <p>Age Crime Data: <a href="../../data/raw-data/age_crime_data.csv">Download csv file </a></p>
+        <p>Statewise Crime 1960-2019: <a href="../../data/raw-data/state_crime.csv">Download csv file </a></p>
+        <p>Hate Crime 1991-2020: <a href="../../data/raw-data/hate_crime.csv">Download csv file </a></p>
+        <p>Crime Against Person by Location: <a href="../../data/raw-data/Crimes_Against_Persons_Offenses_Offense_Category_by_Location_2020.csv">Download csv file </a></p>
+        <p>Crime Against Person by Statewise: <a href="../../data/raw-data/Crimes_Against_Persons_Offenses_Offense_Category_by_State_2020.csv">Download csv file </a></p>
+        <p>Crime Against Society by Location: <a href="../../data/raw-data/Crimes_Against_Society_Offenses_Offense_Category_by_Location_2020.csv">Download csv file </a></p>
+        <p>Crime Against Society by Statewise: <a href="../../data/raw-data/Crimes_Against_Society_Offenses_Offense_Category_by_State_2020.csv">Download csv file </a></p>
+        
+        <p>The source of this raw data is collected from FBI crime data explorer.
+        </td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+  </body>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  </HTML>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

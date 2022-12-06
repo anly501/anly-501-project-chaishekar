@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+   <!-- point to css stylesheet -->
+   <link rel="stylesheet" href="../styles.css">
+
+   
+  
+  <body style="background-color: black;">
+  
+  <style>
+  
+  body {
+    font-family: 'Times New Roman';
+      background-color : white ;
+      position : relative
+      style: #232435;
+  
+  }
+  
+  
+  .navbar{
+      top:0;
+      position: fixed;
+      width : 100%;
+      
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .topnav a.active {
+    background-color: black;
+    color: black;
+  }
+  
+  .headerLogo{
+    top:200px;
+    height:250px;
+    width:200px;
+    line-height:200px;
+  
+    overflow:hidden;
+   
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  h1 {text-align: left;}
+  p {text-align: left;}
+  div {text-align: left;}
+  
+  
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+      max-width:1500px;
+  }
+  
+  li {
+      float: left;
+  }
+  
+  li a, .dropbtn {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+      background-color: grey;
+  }
+  
+  li.dropdown {
+      display: inline-block;
+  }
+  
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      
+      
+  }
+  
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      
+  }
+  
+  
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+  }
+  td {
+      padding: 5px;
+      text-align: left;
+      width: 500px;
+  }
+  
+  tr{
+     padding: 0px;
+     text-align: top;
+     background-color:#ffffff
+  }
+  
+  img:hover {
+    opacity: 1;
+  }
+  
+  </style>
+  
+  
+  
+  
+  
+  <div class="w3-container w3-border city" id="Data Gathering" >
+  <br>
+  <br>
+  
+ 
+  
+  <style>
+  
+  th, td {
+    border: 1px solid black;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+  <body>
+    <!-- HEADER BAR -->
+<ul>
+    
+    
+  <!-- link back to homepage -->
+  <li><a href="../index.html">About Me</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/code">Code</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="https://github.com/anly501/anly-501-project-chaishekar/tree/main/data">Data</a></li>  
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/introduction.html">Introduction</a></li>
+
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datagathering.html">Data Gathering</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/datacleaning.html">Data Cleaning</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/exploringdata.html">Exploring Data</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Naive Bayes</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/naivebayes_R.html" >Record Data</a>
+    <a href="../pages/naivebayes_Python.html" >Text Data</a>
+    
+    </div>
+  </li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/DT_RECORD_DATA.html">Decision Trees</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/svm_text_data.html">SVM</a></li>
+
+  <!-- tab without dropdown  -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Clustering</a>
+
+    <div class="dropdown-content">
+    <a href="../pages/clustering_record_data.html" >Record Data</a>
+    <a href="../pages/clustering_text_data.html" >Text Data</a>
+    
+    </div>
+  </li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/arm_record_data.html">ARM and Networking</a></li>
+
+  <!-- tab without dropdown  -->
+  <li><a href="../pages/conclusion.html">Conclusion</a></li>
+  
+  </ul>
+  <div style="margin-left: 250px; margin-right: 250px;">
+  <h1 style =color:white ><b>DATA CLEANING</b></h1>
+  <p style =color:white >Data cleaning is the process of deleting inaccurate, duplicate, or otherwise erroneous data from a dataset. These errors might include poorly structured data, duplicate entries, mislabeled data, and other difficulties; they frequently occur when two or more datasets are joined. Data cleansing enhances the quality of your data and any business decisions you make based on it.</p>
+  <p style =color:white>There is no one correct approach to clean a dataset because each set is unique and contains its own collection of flaws that must be fixed. Many data cleaning processes can now be automated using specialist software, however some work must still be done manually to achieve maximum accuracy. This task is typically performed by data quality analysts, BI analysts, and business users.</p>
+  <h4 style =color:white ><b>Data Cleaning vs. Data Cleansing vs. Data Scrubbing</b></h4>
+  <p style =color:white> In the majority of instances, these names are interchangeable and refer to the same item. Data scrubbing may be used to refer to a particular component of data cleansing, specifically the elimination of redundant or inaccurate data from datasets. You should also be aware that data scrubbing might have a slightly different meaning within the context of data storage; in this case, it refers to an automated function that reviews storage systems and disk drives to identify and confirm the readability of any faulty sectors or blocks. Note that all three terms data cleaning, data cleansing, and data scrubbing are distinct from data transformation, which is the process of turning clean data to a new format or structure. Data transformation is a distinct procedure that follows data cleansing.</p>
+  <h4 style =color:white >The majority of data cleansing steps adhere to a consistent framework:</h4>
+  <p style =color:white >&#9679 Choose the relevant data values for your analysis.</p>
+  <p style =color:white >&#9679 Collect the information you require, then sort and organize </p>
+  <p style =color:white >&#9679 Identify and remove duplicate or irrelevant values.</p>
+  <p style =color:white >&#9679 Look for missing values and fill them in to get a complete dataset.</p>
+  <p style =color:white >&#9679 Fix any structural or repetitive errors left in the dataset.</p>
+  <p style =color:white >&#9679 Identify outliers and eliminate them so that they do not impede your analysis.</p>
+  <p style =color:white >&#9679 Validate your dataset to guarantee that it is suitable for data transformation and analysis.</p>
+  <h4 style =color:white> TEXT DATA CLEANING:</h4>
+  <p style =color:white>&#9679 Twitter databases contain more information, including retweet, hashtag, username, and altered tweets. This is entirely disregarded and eliminated from the dataset.</p>
+  <p style =color:white>&#9679 Generally, stop words are regarded as a "one group of words." We do not want these terms to use database storage space. This is accomplished using NLTK and a "Stop Word Dictionary." The stop words are eliminated since they serve no purpose.</p>
+  <p style =color:white>&#9679 According to the priorities, it is necessary to address all punctuation marks. For instance, ".", "!","[","?" are essential punctuation marks that should be maintained, while others should be eliminated.</p>
+  <p style =color:white>&#9679 In the text datasets, additional information such as retweet, hashtag, username, and modified tweets are also included. This is all disregarded and removed from the dataset.</p>
+  <p style =color:white>&#9679 The duplicates are removed from the datasets. Occasionally, it is desirable to eliminate duplicate data using a collection of unique identifiers. For instance, the likelihood of two purchases occurring simultaneously with the identical square footage, price, and construction year is practically negligible.</p>
+  <h4 style =color:white>RECORD DATA CLEANING:</h4>
+  <p style =color:white>After data is gathered, unnecessary columns are detected and eliminated. If two datasets include the same columns, they are combined.If null values are detected in the data, they are replaced with the column's mean. Some null values that contribute nothing to the data are eliminated. Checked for outliers and removed them to cleanse the data.</p>
+  
+  </div>
+  <table class = "center" style="width:65%">
+    <tbody>
+      <tr>
+        <th>Snippet of Clean Dataset</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <tr>
+			<td><img alt="python_cleaning__CRIME_image" height="250px" src="../images/CLEANED_CRIME_TEXT_DATA.png" width="450px" />
+			<center><a href="../images/CLEANED_CRIME_TEXT_DATA.png" target="new">View </a></center>
+			<a href="../images/CLEANED_CRIME_TEXT_DATA.png" target="new"> </a>
+
+			<center><a href="../../data/modified-data/cleaned_crime_text_data.csv">Download Clean CSV File</a></center>
+			</td>
+			<td><h3> <center><b>Python Code - #CRIME Text Data</b></center></h3>
+			<br>
+			  <center>Python is used to clean up Twitter text data. In order to conduct an analysis of #CRIME, all of the columns in the dataset were removed, and the one column that remained was the text column.  Tokenization from the NLTK library and Countvectorizer from the scikit-learn library are both used during this cleaning process.</center> 
+			  <br>
+			<center><a href="../../codes/data-cleaning/CRIME_TEXT_DATA_CLEANING.ipynb">Python Code </a></center>
+			</td>
+		</tr>
+		<tr>
+      <tr>
+      <td><img alt="python_cleaning_CRIME_USA_image" height="250px" src="../images/CLEANED_USACRIME_TEXT_DATA.png" width="450px" />
+      <center><a href="../images/CLEANED_USACRIME_TEXT_DATA.png" target="new">View </a></center>
+      <a href="../images/CLEANED_USACRIME_TEXT_DATA.png" target="new"> </a>
+
+      <center><a href="../../data/modified-data/cleaned_usacrime_text_data.csv">Download Clean CSV File</a></center>
+      <center><a href="../../data/modified-data/cleaned_usacrime_text_data.csv">Download Raw CSV File</a></center>
+      </td>
+      <td><h3> <center><b>Python Code - #CRIMEUSA Text Data</b></center></h3>
+      <br>
+      <center>Python is used to clean up Twitter text data. In order to conduct an analysis of #CRIMEUSA and #USACRIME, all of the columns in the dataset were removed, and the one column that remained was the text column.  Tokenization from the NLTK library and Countvectorizer from the scikit-learn library are both used during this cleaning process.</center> 
+      <br>
+      <center><a href="../../codes/data-cleaning/CRIMEUSA_TEXT_DATA_CLEANING.ipynb">Python Code </a></center>
+      </td>
+    </tr>
+    <tr>
+    <tr>
+      <td><img alt="python_cleaning_FBI_image" height="250px" src="../images/CLEANED_FBI_TEXT_DATA.png" width="450px" />
+      <center><a href="../images/CLEANED_FBI_TEXT_DATA.png" target="new">View </a></center>
+      <a href="../images/CLEANED_FBI_TEXT_DATA.png" target="new"> </a>
+
+      <center><a href="../../data/modified-data/cleaned_fbi_text_data.csv">Download Clean CSV File</a></center>
+      <center><a href="../../data/modified-data/cleaned_fbi_text_data.csv">Download Raw CSV File</a></center>
+      </td>
+      <td><h3> <center><b>Python Code - #FBI Text Data</b></center></h3>
+      <br>
+      <center>Python is used to clean up Twitter text data. In order to conduct an analysis of #FBI, all of the columns in the dataset were removed, and the one column that remained was the text column.  Tokenization from the NLTK library and Countvectorizer from the scikit-learn library are both used during this cleaning process.</center> 
+      <br>
+      <center><a href="../../codes/data-cleaning/FBI_TEXT_DATA_CLEANING.ipynb">Python Code </a></center>
+      </td>
+    </tr>
+    <tr>
+			<td><img alt="R_cleaned_data_statewise_crime_pic" height="250px" src="../images/CLEANED_STATE_CRIME_RECORD_DATA.png" width="450px" />
+			<center><a href="../images/CLEANED_STATE_CRIME_RECORD_DATA.png" target="new">View </a></center>
+			<a href="../images/CLEANED_STATE_CRIME_RECORD_DATA.png" target="new"> </a>
+            <center><a href="../../data/modified-data/cleaned_crime_against_person_statewise_record_data.csv">Download Clean Statewise Crime 1960-2019 CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - State Crime 1960-2019 Record Data</b></center></h3>
+			<center>R is used to clean up data that has been labeled. Using R packages, unnecessary columns are removed and it is identified whether the dataset contains any NA values or duplicates. The information is used to find out where in the US Statewise crime of Violent crime and Property crime from 1960-2019.</center> 
+			<br>
+			<center><a href="../../codes/data-cleaning/state_crime_record_cleaning.Rmd">R Code </a></center>
+			</td>
+		</tr>
+    <tr>
+			<td><img alt="R_cleaned_data_age_pic" height="250px" src="../images/CLEANED_AGE_RECORD_DATA.jpg" width="450px" />
+			<center><a href="../images/CLEANED_AGE_RECORD_DATA.jpg" target="new">View </a></center>
+			<a href="../images/CLEANED_AGE_RECORD_DATA.jpg" target="new"> </a>
+            <center><a href="../../data/modified-data/cleaned_age_crime_record_data.csv">Download Clean CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - Age Crime Record Data</b></center></h3>
+			<center>R is used for cleaning up labeled record data. The data is cleaned using R packages to eliminate unwanted columns and to determine whether the dataset contains any NA values or duplicates. The data are used to figure out how crimes in the USA vary by age group.</center> 
+			<br>
+			<center><a href="../../codes/data-cleaning/age_record_data_cleaning.Rmd">R Code </a></center>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="R_cleaned_data_offense_pic" height="250px" src="../images/CLEANED_CRIME_OFFENSE_RECORD_DATA.jpg" width="450px" />
+			<center><a href="../images/CLEANED_CRIME_OFFENSE_RECORD_DATA.jpg" target="new">View </a></center>
+			<a href="../images/CLEANED_CRIME_OFFENSE_RECORD_DATA.jpg" target="new"> </a>
+            <center><a href="../../data/modified-data/cleaned_crime_against_person_statewise_record_data.csv">Download Clean Crime by Person US States CSV File</a></center>
+            <center><a href="../../data/modified-data/cleaned_crime_against_person_locationwise_record_data.csv">Download Clean Crime by Person US Location CSV File</a></center>
+            <center><a href="../../data/modified-data/cleaned_crime_against_society_statewise_record_data.csv">Download Clean Crime by Society US States CSV File</a></center>
+            <center><a href="../../data/modified-data/cleaned_crime_against_society_locationwise_record_data.csv">Download Clean Crime by Society US Location CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - Offenses in US Record Data</b></center></h3>
+			<center>R is used to clean up data that has been labeled. Using R packages, unnecessary columns are removed and it is identified whether the dataset contains any NA values or duplicates. The information is used to find out where in the US crimes against people and crimes against society happen.</center> 
+			<br>
+			<center><a href="../../codes/data-cleaning/crime_against_person_society_record_cleaning.Rmd">R Code </a></center>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="R_cleaned_data_hate_crime_pic" height="250px" src="../images/CLEANED_HATE_CRIME_RECORD_DATA.png" width="450px" />
+			<center><a href="../images/CLEANED_HATE_CRIME_RECORD_DATA.png" target="new">View </a></center>
+			<a href="../images/CLEANED_HATE_CRIME_RECORD_DATA.png" target="new"> </a>
+            <center><a href="../../data/modified-data/cleaned_hate_crime_record_data.csv">Download Clean Hate Crime 1991-2020 CSV File</a></center>
+			</td> 
+			<td><h3> <center><b>R Code - Hate Crime 1991-2020 Record Data</b></center></h3>
+			<center>R is used to clean up data that has been labeled. Using R packages, unnecessary columns are removed and it is identified whether the dataset contains any NA values or duplicates. The information is used to find out where in the US Hate crimes from 1991-2020.</center> 
+			<br>
+			<center><a href="../../codes/data-cleaning/hate_crime_record_data_cleaning.Rmd">R Code </a></center>
+			</td>
+		</tr>
+
+    
+	</tbody>
+</table>
+</div>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
